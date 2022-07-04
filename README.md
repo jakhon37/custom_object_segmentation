@@ -37,7 +37,7 @@ The segmentation output of the model on a sample image are shown below.
 
 #### first open your terminal and clone the repository on your specified folder of local machine
 ```
-git clone git@github.com:jakhon37/custom_object_segmentation.git
+git clone https://github.com/jakhon37/custom_object_segmentation.git
 ```
 
 #### Using conda create new enviorenment with python version==3.7
@@ -92,4 +92,4 @@ you can chack test result  in "output" folder.
     ---------val_annotation.json
     ```
 
-#### you can check e
+#### ******************
