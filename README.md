@@ -35,7 +35,8 @@ The segmentation output of the model on a sample image are shown below.
 
 ### Installing dependencies
 
-#### first open your terminal and clone the repository on your specified folder of local machine
+#### first open your terminal and clone the repository on your specified folder of local machine. 
+th eprojects was tested in linux ubuntu OS
 ```
 git clone https://github.com/jakhon37/custom_object_segmentation.git
 ```
