@@ -74,6 +74,19 @@ to test differet images, open eval.py file and specify your data path
 you can chack test result  in "output" folder. 
 
 
+#### if you want to test without training, doenload trained weight for this dataset and place it in spesified folder 
+link: <a href="http://www.lewagon.com](https://www.google.com](https://drive.google.com/file/d/1_MSHem9fZeUW4qPg9F3WhfJHNrwafDYb/view?usp=sharing">model_final.pth</a> 
+
+
+folder to put the weight: 
+```
+    --output
+    ----segmentation
+    ------model_final.pth
+```
+
+
+
 
 
 
