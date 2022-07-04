@@ -1,120 +1,93 @@
 ## Semantic Segmentation with Transfer Learning 
 
-In this project I trained custom detaset.  
+In this project we trained custom detaset using pretrained weights.  
 
 ### Dataset annotation 
-I have used coco-annotator tool for labeling the custom data. We have stored label details in jason file and pu it in training and validation folders
+I have used coco-annotator tool for labeling the custom data. We have stored label details in json file and put them in training and validation folders
 
 3 samples of the dataset
 
-![labelled image](./readme_source/22-05.jpg)
-![labelled image](./readme_source/22-04.jpg)
-![labelled image](./readme_source/22-06.jpg)
+
+<p float="left">
+  <img src="./readme_source/22-05.jpg" width="300" />
+  <img src="./readme_source/22-04.jpg" width="300" /> 
+  <img src="./readme_source/22-06.jpg" width="300" />
+</p>
+
 
 
 labelled image 
-![labelled image](./readme_source/37-20.jpg)
 
+<p float="left">
+  <img src="./readme_source/37-20.jpg" width="300" />
+
+</p>
 The model was fine tuned for 100 epochs. 
 
 The segmentation output of the model on a sample image are shown below.
 
-![labelled image](./readme_source/33-22.jpg)
-![labelled image](./readme_source/33-23.jpg)
-![labelled image](./readme_source/33-24.jpg)
 
-
+<p float="left">
+  <img src="./readme_source/33-22.jpg" width="500" />
+  <img src="./readme_source/33-23.jpg" width="500" /> 
+  <img src="./readme_source/33-24.jpg" width="500" />
+</p>
 
 ### Installing dependencies
 
-#### Using pip
-
+#### first open your terminal and clone the repository on your specified folder of local machine
 ```
+git clone git@github.com:jakhon37/custom_object_segmentation.git
+```
+
+#### Using conda create new enviorenment with python version==3.7
+```
+conda env create -n c python==3.7
+
+conda activate new_custom_env
+
 pip install -r requirements.txt
 ```
 
-#### Using conda
-```
-conda env create -f environment.yml
-```
+
+
 
 ### Usage of the module
 
+#### training 
+ 
+ run below command on your terminal for training
 ```
-Usage: main.py [OPTIONS]
-
-Options:
-  --data-directory TEXT  Specify the data directory.  [required]
-  --exp_directory TEXT   Specify the experiment directory.  [required]
-  --epochs INTEGER       Specify the number of epochs you want to run the
-                         experiment for. Default is 25.
-
-  --batch-size INTEGER   Specify the batch size for the dataloader. Default is 4.
-  --help                 Show this message and exit.
-```
-
-To run the code with the CrackForest dataset and store the results in folder called CFExp use the following command.
+python train.py
 
 ```
-python main.py --data-directory CrackForest --exp_directory CFExp
+for custom dataset  open train.py file and specify your data path 
+
+#### evaluation 
+
+for testing the trained model, run below command on your terminal 
 ```
+python eval.py
+```
+to test differet images, open eval.py file and specify your data path 
 
-The datahandler module has two functions for creating datasets fron single and different folders.
 
-1. ```
-   def get_dataloader_sep_folder(data_dir: str,
-                              image_folder: str = 'Image',
-                              mask_folder: str = 'Mask',
-                              batch_size: int = 4)
+
+
+
+#### dataset folder strucutre 
+
+
     ```
-    Create Train and Test dataloaders from two separate Train and Test folders. The directory structure should be as follows.
-    ```
-    data_dir
-    --Train
-    ------Image
+    --dataset
+    ----e_motor
+    ------train
     ---------Image1
     ---------ImageN
-    ------Mask
-    ---------Mask1
-    ---------MaskN
-    --Train
-    ------Image
+    ---------train_annotation.json
+    ------validation
     ---------Image1
     ---------ImageN
-    ------Mask
-    ---------Mask1
-    ---------MaskN
+    ---------val_annotation.json
     ```
 
-2. ```
-   def get_dataloader_single_folder(data_dir: str,
-                                 image_folder: str = 'Images',
-                                 mask_folder: str = 'Masks',
-                                 fraction: float = 0.2,
-                                 batch_size: int = 4)
-   ```
-
-    Create from a single folder. The structure should be as follows.
-    ```
-    --data_dir
-    ------Image
-    ---------Image1
-    ---------ImageN
-    ------Mask
-    ---------Mask1
-    ---------MaskN
-    ```
-
-The repository also contains a JupyterLab file with the loss and metric plots as well as the sample prediction code.
-
-## Citation
-
-If you found this repository to be useful and use it in your work, please consider citing it:
-
-Bibtex Entry:
-
-@misc{minhas_2019, title={Transfer Learning for Semantic Segmentation using PyTorch DeepLab v3}, url={https://github.com/msminhas93/DeepLabv3FineTuning}, journal={GitHub.com/msminhas93}, author={Minhas, Manpreet Singh}, year={2019}, month={Sep}}
-
-IEEE Format Citation:
-
-M. S. Minhas, “Transfer Learning for Semantic Segmentation using PyTorch DeepLab v3,” GitHub.com/msminhas93, 12-Sep-2019. [Online]. Available: https://github.com/msminhas93/DeepLabv3FineTuning.
