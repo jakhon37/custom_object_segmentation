@@ -69,7 +69,8 @@ for testing the trained model, run below command on your terminal
 ```
 python eval.py
 ```
-to test differet images, open eval.py file and specify your data path 
+to test differet images, open eval.py file and specify your data path
+you can chack test result  in "output" folder. 
 
 
 
@@ -91,3 +92,4 @@ to test differet images, open eval.py file and specify your data path
     ---------val_annotation.json
     ```
 
+#### you can check e
