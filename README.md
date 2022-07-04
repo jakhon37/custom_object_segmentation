@@ -1,14 +1,29 @@
-## Transfer Learning for Semantic Segmentation using PyTorch DeepLab v3
+## Semantic Segmentation with Transfer Learning 
 
-This repository contains code for Fine Tuning [DeepLabV3 ResNet101](https://arxiv.org/abs/1706.05587) in PyTorch. The model is from the [torchvision module](https://pytorch.org/docs/stable/torchvision/models.html#semantic-segmentation). The tutorial can be found here: [https://towardsdatascience.com/transfer-learning-for-segmentation-using-deeplabv3-in-pytorch-f770863d6a42?sk=b403331a7b30c02bff165a93823a5524](https://towardsdatascience.com/transfer-learning-for-segmentation-using-deeplabv3-in-pytorch-f770863d6a42?sk=b403331a7b30c02bff165a93823a5524)
+In this project I trained custom detaset.  
 
-I've fine tuned the model for the [CrackForest](https://github.com/cuilimeng/CrackForest-dataset) data-set. 
+### Dataset annotation 
+I have used coco-annotator tool for labeling the custom data. We have stored label details in jason file and pu it in training and validation folders
 
-The model was fine tuned for 25 epochs and achieves an testing AUROC value of 0.842.
+3 samples of the dataset
+
+![labelled image](./readme_source/22-05.jpg)
+![labelled image](./readme_source/22-04.jpg)
+![labelled image](./readme_source/22-06.jpg)
+
+
+labelled image 
+![labelled image](./readme_source/37-20.jpg)
+
+The model was fine tuned for 100 epochs. 
 
 The segmentation output of the model on a sample image are shown below.
 
-![Sample segmentation output](./CFExp/SegmentationOutput.png)
+![labelled image](./readme_source/33-22.jpg)
+![labelled image](./readme_source/33-23.jpg)
+![labelled image](./readme_source/33-24.jpg)
+
+
 
 ### Installing dependencies
 
